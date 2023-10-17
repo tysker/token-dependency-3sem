@@ -6,8 +6,6 @@ import dk.lyngby.factory.TokenVerifier;
 import dk.lyngby.model.ClaimBuilder;
 import lombok.NoArgsConstructor;
 
-import java.util.Map;
-
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class TokenFactory {
 
@@ -21,29 +19,37 @@ public class TokenFactory {
         return verifier.verifyTokenAndReturnClaim(token, secretKey.getBytes(), claimBuilder);
     }
 
-    public static void main(String[] args) throws TokenException {
-        TokenCreator token = new TokenCreator();
-        TokenVerifier verifier = new TokenVerifier();
-        String secret = "secret841D8A6C80CBA4FCAD32D5367C18C53B";
-
-        ClaimBuilder claimBuilder = ClaimBuilder.builder()
-                .issuer("issuer")
-                .audience("audience")
-                .expirationTime(3600000L)
-                .issueTime(3600000L)
-                .claimSet(Map.of("username", "test", "roles", "[ADMIN, USER]"))
-                .build();
-
-        ClaimBuilder claimBuilderVerify = ClaimBuilder.builder()
-                .issuer("issuer")
-                .audience("audience")
-                .expirationTime(3600000L)
-                .issueTime(3600000L)
-                .claimSet(Map.of("username", "test", "roles", "[ADMIN, USER]"))
-                .build();
-
-        String token1 = token.createToken(claimBuilder, secret.getBytes());
-        String verified = verifier.verifyTokenAndReturnClaim(token1, secret.getBytes(), claimBuilderVerify);
-        System.out.println(verified);
+    public static String getUsernameFromToken(String token) throws TokenException {
+        return verifier.getUsernameFromToken(token);
     }
+
+//    public static void main(String[] args) throws TokenException {
+//        TokenCreator token = new TokenCreator();
+//        TokenVerifier verifier = new TokenVerifier();
+//        String secret = "secret841D8A6C80CBA4FCAD32D5367C18C53B";
+//
+//        ClaimBuilder claimBuilder = ClaimBuilder.builder()
+//                .issuer("lyngby")
+//                .audience("datamatiker")
+//                .claimSet(Map.of("username", "steve", "roles", "[ADMIN, USER]"))
+//                .expirationTime(3600000L)
+//                .issueTime(3600000L)
+//                .build();
+//
+//        ClaimBuilder claimBuilderVerify = ClaimBuilder.builder()
+//                .issuer("lyngby")
+//                .audience("datamatiker")
+//                .claimSet(Map.of("username", "steve", "roles", "[ADMIN, USER]"))
+//                .expirationTime(3600000L)
+//                .issueTime(3600000L)
+//                .build();
+//
+//        String token1 = token.createToken(claimBuilder, secret.getBytes());
+//
+//        String usernameFromToken = getUsernameFromToken(token1);
+//        System.out.println("Steve: " + usernameFromToken);
+//        System.out.println(token1);
+//        String verified = verifier.verifyTokenAndReturnClaim(token1, secret.getBytes(), claimBuilderVerify);
+//        System.out.println(verified);
+//    }
 }

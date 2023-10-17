@@ -51,7 +51,8 @@ public class TokenVerifier {
 
             Set<Map.Entry<String, String>> entries = claimBuilder.getClaimSet().entrySet();
             int size = entries.size();
-
+            System.out.println(entries);
+            System.out.println(size);
             for (int i = 0; i < size; i++) {
                 String key = entries.toArray()[i].toString().split("=")[0];
                 String value = entries.toArray()[i].toString().split("=")[1];
@@ -86,5 +87,15 @@ public class TokenVerifier {
             throw new TokenException("Invalid token signature");
         }
         return signedJWT;
+    }
+
+    public String getUsernameFromToken(String token) {
+        try {
+            SignedJWT signedJWT = SignedJWT.parse(token);
+            JWTClaimsSet claimsSet = signedJWT.getJWTClaimsSet();
+            return claimsSet.getClaim("username").toString();
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
