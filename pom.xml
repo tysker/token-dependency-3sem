@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dk.lyngby</groupId>
-    <artifactId>token-dependency</artifactId>
+    <artifactId>token-dependency-3sem</artifactId>
     <version>1.0.5</version>
 
     <properties>
@@ -39,7 +39,20 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+
+        <dependency>
+            <groupId>com.github.tysker</groupId>
+            <artifactId>token-dependency-3sem</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 
         <!--  Utilities      -->
 
