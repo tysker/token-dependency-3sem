@@ -15,13 +15,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-<!--    <distributionManagement>-->
-<!--        <repository>-->
-<!--            <id>github</id>-->
-<!--            <name>tysker</name>-->
-<!--            <url>https://maven.pkg.github.com/tysker/token-dependency</url>-->
-<!--        </repository>-->
-<!--    </distributionManagement>-->
+    <!-- For github package deployment   -->
+
+    <!--    <distributionManagement>-->
+    <!--        <repository>-->
+    <!--            <id>github</id>-->
+    <!--            <name>tysker</name>-->
+    <!--            <url>https://maven.pkg.github.com/tysker/token-dependency</url>-->
+    <!--        </repository>-->
+    <!--    </distributionManagement>-->
+
     <build>
         <plugins>
             <plugin>
@@ -64,7 +67,6 @@
             <version>9.0.1</version>
         </dependency>
     </dependencies>
-
 
 
 </project>
