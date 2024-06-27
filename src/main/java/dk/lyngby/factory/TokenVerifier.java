@@ -51,8 +51,7 @@ public class TokenVerifier {
 
             Set<Map.Entry<String, String>> entries = claimBuilder.getClaimSet().entrySet();
             int size = entries.size();
-            System.out.println(entries);
-            System.out.println(size);
+
             for (int i = 0; i < size; i++) {
                 String key = entries.toArray()[i].toString().split("=")[0];
                 String value = entries.toArray()[i].toString().split("=")[1];
