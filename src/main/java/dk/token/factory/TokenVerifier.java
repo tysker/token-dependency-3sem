@@ -1,12 +1,12 @@
-package dk.lyngby.factory;
+package dk.token.factory;
 
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSVerifier;
 import com.nimbusds.jose.crypto.MACVerifier;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
-import dk.lyngby.exceptions.TokenException;
-import dk.lyngby.model.ClaimBuilder;
+import dk.token.exceptions.TokenException;
+import dk.token.model.ClaimBuilder;
 
 import java.text.ParseException;
 import java.util.Date;

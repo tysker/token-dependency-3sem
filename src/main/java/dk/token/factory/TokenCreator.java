@@ -1,10 +1,10 @@
-package dk.lyngby.factory;
+package dk.token.factory;
 
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jwt.JWTClaimsSet;
-import dk.lyngby.exceptions.TokenException;
-import dk.lyngby.model.ClaimBuilder;
+import dk.token.exceptions.TokenException;
+import dk.token.model.ClaimBuilder;
 
 import java.util.Date;
 

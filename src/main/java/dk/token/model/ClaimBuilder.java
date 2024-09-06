@@ -1,4 +1,4 @@
-package dk.lyngby.model;
+package dk.token.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

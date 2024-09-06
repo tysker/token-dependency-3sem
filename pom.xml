@@ -34,7 +34,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>dk.lyngby.TokenFactory</mainClass> <!-- Set your main class -->
+                            <mainClass>dk.token.TokenFactory</mainClass> <!-- Set your main class -->
                         </manifest>
                     </archive>
                 </configuration>

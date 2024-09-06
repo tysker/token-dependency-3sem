@@ -1,9 +1,9 @@
-package dk.lyngby;
+package dk.token;
 
-import dk.lyngby.exceptions.TokenException;
-import dk.lyngby.factory.TokenCreator;
-import dk.lyngby.factory.TokenVerifier;
-import dk.lyngby.model.ClaimBuilder;
+import dk.token.exceptions.TokenException;
+import dk.token.factory.TokenCreator;
+import dk.token.factory.TokenVerifier;
+import dk.token.model.ClaimBuilder;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)

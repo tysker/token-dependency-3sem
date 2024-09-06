@@ -1,4 +1,4 @@
-package dk.lyngby.exceptions;
+package dk.token.exceptions;
 
 public class TokenException extends Exception{
 
